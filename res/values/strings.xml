@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">calculator</string>
+    <string name="button0">0</string>
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="button_plus">+</string>
+    <string name="button_clear">C</string>
+    <string name="button_equal">=</string>
+    <string name="button_minus">-</string>
+    <string name="button_mul">*</string>
+    <string name="button_div">/</string>
+    <string name="button_la">(</string>
+    <string name="button_ra">)</string>
+    <string name="buf_text">0.0</string>
+
+</resources>

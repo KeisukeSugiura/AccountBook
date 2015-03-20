@@ -191,6 +191,8 @@ public class DayAccountFragment extends Fragment implements OnedayListAdapter.De
     private void deleteData(DayAccountModel model){
         mAccountDatabase.deleteData(model);
         mTodayAccountData.remove(model);
+        mTodayAdapter.deleteAccounrt(model);
+        mTodayAdapter.notifyDataSetChanged();
         setSum();
     }
 
@@ -221,7 +223,10 @@ public class DayAccountFragment extends Fragment implements OnedayListAdapter.De
                     break;
                 case R.id.dayaccount_update_button:
                     Log.d("step1", "click ok---");
-                    addNewData(1,Integer.valueOf(mPriceEditText.getText().toString()));
+                    String editPrice = mPriceEditText.getText().toString();
+                    if(editPrice != null && !editPrice.isEmpty()) {
+                        addNewData(1, Integer.valueOf(editPrice));
+                    }
                     break;
             }
         }
@@ -230,6 +235,7 @@ public class DayAccountFragment extends Fragment implements OnedayListAdapter.De
     @Override
     public void deleteAccount(DayAccountModel model) {
         //listAdapterからのinterfaceメソッド
+        Log.d("delete","okeeee");
         deleteData(model);
     }
 

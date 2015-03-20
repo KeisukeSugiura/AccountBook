@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 
         //MonthFragment fragment = new MonthFragment();
         DayAccountFragment fragment = new DayAccountFragment();
-        fragmentTransaction.add(R.id.fragment_content,fragment,"day");
+        fragmentTransaction.add(R.id.fragment_content,fragment,"DayAccount");
 		fragmentTransaction.commit();
 		
 	

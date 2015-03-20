@@ -2,6 +2,7 @@ package com.example.FunctionCalculator.model;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 import com.example.FunctionCalculator.R;
+import com.example.FunctionCalculator.activity.DayAccountFragment;
 
 import java.util.ArrayList;
 
@@ -59,7 +61,7 @@ public class OnedayListAdapter extends BaseAdapter {
             holder.price = (TextView) view.findViewById(R.id.account_list_item_price);
             holder.type = (TextView) view.findViewById(R.id.account_list_item_type);
             holder.delete = (Button) view.findViewById(R.id.account_list_item_button_delete);
-
+            holder.delete.setOnClickListener(new OnDeleteClickListener());
             view.setTag(holder);
         } else {
             holder = (HoldViewItem) view.getTag();
@@ -82,15 +84,20 @@ public class OnedayListAdapter extends BaseAdapter {
         mAccount.add(model);
     }
 
+    public void deleteAccounrt(DayAccountModel model){
+        mAccount.remove(model);
+    }
+
 
 
     private void deleteItem(DayAccountModel model){
        // DayAccountFragment activity = (DayAccountFragment) getFragmentManager()
          //       .findFragmentByTag("pager");
 
-        //DayAccountFragment activity = (DayAccountFragment) mActivity.getFragmentManager().findFragmentByTag("DayAccount");
-        if (mActivity instanceof DeleteListener) {
-            DeleteListener listener = (DeleteListener) mActivity;
+        DayAccountFragment activity = (DayAccountFragment) mActivity.getFragmentManager().findFragmentByTag("DayAccount");
+       Log.d("delete","sendsend");
+        if (activity instanceof DeleteListener) {
+            DeleteListener listener = (DeleteListener) activity;
             listener.deleteAccount(model);
         }
     }

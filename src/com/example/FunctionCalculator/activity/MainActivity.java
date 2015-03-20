@@ -1,12 +1,10 @@
-package com.example.FunctionCalculator;
+package com.example.FunctionCalculator.activity;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.app.*;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.WindowManager;
+import com.example.FunctionCalculator.R;
 
 public class MainActivity extends Activity {
 
@@ -35,11 +33,14 @@ public class MainActivity extends Activity {
 		
 		
 		//fragmentTransaction.add(R.id.fragment_content,calFrag);
-
+/*
         CalculateFragment calculateFragment = new CalculateFragment();
-
         fragmentTransaction.add(R.id.fragment_content,calculateFragment,"calculator");
+*/
 
+        //MonthFragment fragment = new MonthFragment();
+        DayAccountFragment fragment = new DayAccountFragment();
+        fragmentTransaction.add(R.id.fragment_content,fragment,"day");
 		fragmentTransaction.commit();
 		
 	

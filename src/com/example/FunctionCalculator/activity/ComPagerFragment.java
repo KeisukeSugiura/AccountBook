@@ -1,4 +1,4 @@
-package com.example.FunctionCalculator;
+package com.example.FunctionCalculator.activity;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by yoshida keisuke on 2015/03/17.
  */
-public class DayAccountFragment extends Fragment {
+public class ComPagerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return null;
@@ -22,8 +22,8 @@ public class DayAccountFragment extends Fragment {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -36,8 +36,6 @@ public class DayAccountFragment extends Fragment {
         super.onPause();
     }
 
-
-
     @Override
     public void onDetach() {
         super.onDetach();
@@ -46,10 +44,5 @@ public class DayAccountFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
     }
 }

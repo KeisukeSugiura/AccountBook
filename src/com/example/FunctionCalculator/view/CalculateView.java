@@ -1,4 +1,4 @@
-package com.example.FunctionCalculator;
+package com.example.FunctionCalculator.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,6 +6,7 @@ import android.graphics.*;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.*;
+import com.example.FunctionCalculator.activity.CalculateFragment;
 
 /**
  * Created by yoshida keisuke on 2015/02/23.

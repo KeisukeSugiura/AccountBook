@@ -1,4 +1,4 @@
-package com.example.FunctionCalculator;
+package com.example.FunctionCalculator.module;
 
 import android.util.Log;
 

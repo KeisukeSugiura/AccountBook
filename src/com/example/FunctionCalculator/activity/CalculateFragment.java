@@ -1,4 +1,4 @@
-package com.example.FunctionCalculator;
+package com.example.FunctionCalculator.activity;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -12,6 +12,9 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import com.example.FunctionCalculator.view.CalculateView;
+import com.example.FunctionCalculator.module.ExcuteFormula;
+import com.example.FunctionCalculator.R;
 
 /**
  * Created by yoshida keisuke on 2015/02/24.

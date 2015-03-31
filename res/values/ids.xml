@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="select_icon_eat"/>
+    <item type="id" name="select_icon_life"/>
+    <item type="id" name="select_icon_trans"/>
+    <item type="id" name="select_icon_play"/>
+    <item type="id" name="select_icon_conf"/>
+    <item type="id" name="select_icon_up"/>
+    <item type="id" name="select_icon_hobby"/>
+    <item type="id" name="select_icon_drag"/>
+    <item type="id" name="select_icon_others"/>
+
+    <item type="id" name="select_numberpanel_0"/>
+    <item type="id" name="select_numberpanel_1"/>
+    <item type="id" name="select_numberpanel_2"/>
+    <item type="id" name="select_numberpanel_3"/>
+    <item type="id" name="select_numberpanel_4"/>
+    <item type="id" name="select_numberpanel_5"/>
+    <item type="id" name="select_numberpanel_6"/>
+    <item type="id" name="select_numberpanel_7"/>
+    <item type="id" name="select_numberpanel_8"/>
+    <item type="id" name="select_numberpanel_9"/>
+    <item type="id" name="select_numberpanel_back"/>
+    <item type="id" name="select_numberpanel_clear"/>
+
+</resources>

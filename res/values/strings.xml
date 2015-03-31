@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">calculator</string>
+    <string name="app_name">AccountBook</string>
     <string name="button0">0</string>
     <string name="button1">1</string>
     <string name="button2">2</string>

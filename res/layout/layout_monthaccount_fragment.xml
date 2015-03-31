@@ -1,29 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
-    <TextView
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+        >
+    <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="New Text"
-            android:id="@+id/monthaccount_month"/>
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            >
 
-    <CalendarView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="6"
-            android:showWeekNumber="false"
-            android:id="@+id/monthaccount_calendarView"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text=""
+                android:id="@+id/monthaccount_month"/>
+        <CalendarView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="6"
+                android:selectedWeekBackgroundColor="@android:color/transparent"
+                android:selectedDateVerticalBar="@android:color/holo_blue_bright"
+                android:showWeekNumber="false"
+
+                android:id="@+id/monthaccount_calendarView" android:padding="15dp"/>
 
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="New Text"
-            android:id="@+id/monthaccount_sumprice"
-            android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+                >
+
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:text="New Text"
+                    android:id="@+id/monthaccount_sumprice"
+                    android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:gravity="center_vertical"
+                    android:text="New Text"
+                    android:id="@+id/monthaccount_dayprice"
+                    android:layout_gravity="center_horizontal"/>
+
+
+        </LinearLayout>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text=""
+                    />
+
+    </LinearLayout>
+
+</FrameLayout>

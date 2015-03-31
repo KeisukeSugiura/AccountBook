@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent" >
+              android:layout_height="match_parent">
 
 
     <TextView
@@ -26,11 +26,13 @@
 
 
     <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:text="New Text"
             android:id="@+id/dayaccount_sum"
             android:gravity="center_vertical"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
             android:textSize="21sp"
             android:layout_marginLeft="12dp"
             android:layout_weight="1"/>
@@ -39,26 +41,28 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
+            android:background="@drawable/day_account_input"
             android:padding="6dp"
             android:layout_gravity="center_horizontal"
             >
-        <Button
+        <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="New Button"
+                android:src="@drawable/hatena"
+                android:adjustViewBounds="true"
                 android:id="@+id/dayaccount_type_button"/>
-        <EditText
+        <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:inputType="number"
-                android:ems="10"
+                android:gravity="center"
                 android:id="@+id/dayaccount_editprice" android:layout_weight="3"/>
-        <Button
+        <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="New Button"
+                android:src="@drawable/plus100"
+                android:adjustViewBounds="true"
                 android:id="@+id/dayaccount_update_button"/>
 
     </LinearLayout>

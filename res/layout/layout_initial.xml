@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+
+        >
+
+
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"
+              android:gravity="center"
+            android:text="支出のみを素早く入力できるアプリケーションです。"
+            />
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="5"
+                  android:padding="30dp"
+            >
+
+    <ImageView android:layout_width="match_parent" android:layout_height="match_parent"
+               android:padding="1dp"
+               android:src="@drawable/screen_demo726"
+               android:background="#777777"
+               android:adjustViewBounds="true"
+            />
+</LinearLayout>
+
+
+    <TextView android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1"
+            android:text="左の画面で編集したい日を選択できます"
+              android:gravity="center"
+              android:layout_marginLeft="6dp"
+              android:layout_marginRight="6dp"
+              android:layout_gravity="left"
+            />
+    <TextView android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1"
+              android:text="真ん中の画面で支出の入力ができます"
+              android:gravity="center"
+              android:layout_gravity="center_horizontal"
+            />
+    <TextView android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="1"
+                        android:text="右の画面で数字の計算をすることができます"
+              android:gravity="center"
+              android:layout_marginRight="6dp"
+              android:layout_marginLeft="6dp"
+              android:layout_gravity="right"
+        />
+
+    <Button android:layout_width="wrap_content" android:layout_height="0dp" android:layout_weight="2"
+            android:layout_gravity="center_horizontal"
+            android:background="#2222ee"
+            android:layout_margin="20dp"
+            android:padding="6dp"
+            android:id="@+id/startbutton_initialactivity"
+            android:text="家計簿をはじめる"
+            />
+
+
+</LinearLayout>

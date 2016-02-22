@@ -251,7 +251,7 @@ public class ExcuteFormula {
                 mMinusFlg--;
             }
         }
-       // Log.d("parse", formulaList.toString());
+        // Log.d("parse", formulaList.toString());
         return formulaList;
     }
 
@@ -450,15 +450,29 @@ public class ExcuteFormula {
 
                     }
                 } else if (token.equals(SIN)) {
-                    accumulator = Math.sin(Math.toRadians(Double.parseDouble(calStack.get(calStack.size() - 1))));
+                    try {
+                        accumulator = Math.sin(Math.toRadians(Double.parseDouble(calStack.get(calStack.size() - 1))));
+                    } catch (Exception e) {
+                        return "Error";
+                    }
                 } else if (token.equals(COS)) {
-                    accumulator = Math.cos(Math.toRadians(Double.parseDouble(calStack.get(calStack.size() - 1))));
-
+                    try {
+                        accumulator = Math.cos(Math.toRadians(Double.parseDouble(calStack.get(calStack.size() - 1))));
+                    } catch (Exception e) {
+                        return "Error";
+                    }
                 } else if (token.equals(TAN)) {
-                    accumulator = Math.tan(Math.toRadians(Double.parseDouble(calStack.get(calStack.size() - 1))));
-
+                    try {
+                        accumulator = Math.tan(Math.toRadians(Double.parseDouble(calStack.get(calStack.size() - 1))));
+                    } catch (Exception e) {
+                        return "Error";
+                    }
                 } else if (token.equals(LOG)) {
-                    accumulator = Math.log10(Double.parseDouble(calStack.get(calStack.size() - 1)));
+                    try {
+                        accumulator = Math.log10(Double.parseDouble(calStack.get(calStack.size() - 1)));
+                    } catch (Exception e) {
+                        return "Error";
+                    }
                 } else if (token.equals(HAT)) {
                     try {
                         accumulator = Math.pow(Double.parseDouble(calStack.get(calStack.size() - 2)), Double.parseDouble(calStack.get(calStack.size() - 1)));
@@ -476,13 +490,13 @@ public class ExcuteFormula {
 //                    return Double.NaN;
                 }
                 calStack.remove(calStack.size() - 1);
-                if(!Double.isNaN(accumulator) && !Double.isInfinite(accumulator)) {
+                if (!Double.isNaN(accumulator) && !Double.isInfinite(accumulator)) {
                     BigDecimal bigDecimal = new BigDecimal(accumulator);
                     bigDecimal = bigDecimal.setScale(PRECISE, BigDecimal.ROUND_HALF_UP);
                     accumulator = bigDecimal.doubleValue();
 
                     calStack.add(String.valueOf(bigDecimal));
-                }else{
+                } else {
                     break;
                 }
 
@@ -503,11 +517,11 @@ public class ExcuteFormula {
             } else {
 
                 int checker = (int) accumulator;
-             //   Log.d("result", String.valueOf(checker));
+                //   Log.d("result", String.valueOf(checker));
                 //整数は整数で返す
                 if (Double.compare(accumulator, 0.0) < 0) {
-                  //  Log.d("-",String.valueOf(accumulator));
-                    if (checker-1 < accumulator && accumulator < checker) {
+                    //  Log.d("-",String.valueOf(accumulator));
+                    if (checker - 1 < accumulator && accumulator < checker) {
 
                         return String.valueOf(accumulator);
                     } else {
@@ -515,7 +529,7 @@ public class ExcuteFormula {
                     }
 
                 } else {
-                  //  Log.d("+",String.valueOf(accumulator));
+                    //  Log.d("+",String.valueOf(accumulator));
 
                     if (checker < accumulator && accumulator < checker + 1) {
 

@@ -3,15 +3,16 @@ package com.example.AccountBook.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CalendarView;
 import android.widget.TextView;
 import com.example.AccountBook.R;
 import com.example.AccountBook.database.AccountDatabase;
 import com.example.AccountBook.database.DatabaseFactory;
 import com.example.AccountBook.model.DayAccountModel;
+import com.example.AccountBook.view.AccountCalendarView;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -24,7 +25,7 @@ public class MonthFragment extends Fragment {
     //private TextView mDate;
     private TextView mSumMonthText;
     private TextView mDateText;
-    private CalendarView mCalendar;
+    private AccountCalendarView mCalendar;
 
     private int mYear;
     private int mMonth;
@@ -37,11 +38,11 @@ public class MonthFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.layout_monthaccount_fragment, container, false);
-        mCalendar = (CalendarView) mView.findViewById(R.id.monthaccount_calendarView);
+        mCalendar = (AccountCalendarView) mView.findViewById(R.id.monthaccount_calendar_view);
         //mDate = (TextView) mView.findViewById(R.id.monthaccount_month);
         mDateText = (TextView) mView.findViewById(R.id.monthaccount_dayprice);
         mSumMonthText = (TextView) mView.findViewById(R.id.monthaccount_sumprice);
-        mCalendar.setOnDateChangeListener(new onDateClickListener());
+        mCalendar.setDayItemClickListener(new onDateClickListener());
         Calendar calendar =Calendar.getInstance();
         mYear = calendar.get(Calendar.YEAR);
         mMonth = calendar.get(Calendar.MONTH)+1;
@@ -51,6 +52,7 @@ public class MonthFragment extends Fragment {
         mDatabase = DatabaseFactory.getAccountDatabase(getActivity());
         queryMonth2Database();
         setDaySumText();
+        mCalendar.setCalendar(mAccountList, mYear, mMonth, mDay);
 
 
 
@@ -117,6 +119,7 @@ public class MonthFragment extends Fragment {
         queryMonth2Database();
         setMonthSumText();
         setDaySumText();
+        mCalendar.setCalendar(mAccountList,mYear,mMonth,mDay);
     }
 
     public void notifyDateChanged(int year,int month,int day){
@@ -133,16 +136,47 @@ public class MonthFragment extends Fragment {
     }
 
 
-    private class onDateClickListener implements CalendarView.OnDateChangeListener {
+    private class onDateClickListener implements AccountCalendarView.onDayItemClickListener {
         @Override
-        public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
-            mYear = i;
-            mMonth = i1+1;
-            mDay = i2;
-        //    mDate.setText(String.valueOf(mYear) + String.valueOf(mMonth) + String.valueOf(mDay));
+        public void onItemClick(int i) {
+                mDay=i;
+            mCalendar.setDayText(mDay);
             notifyDateChanged(mYear, mMonth, mDay);
             queryMonth2Database();
             setDaySumText();
+        }
+
+        @Override
+        public void onNextClick() {
+            Log.i("aaaaaa", "nextnext");
+            if(mMonth == 12){
+                mMonth=1;
+                mYear++;
+            }else{
+                mMonth++;
+            }
+            notifyDateChanged(mYear, mMonth, mDay);
+            queryMonth2Database();
+            setDaySumText();
+            mCalendar.setCalendar(mAccountList,mYear,mMonth,mDay);
+
+        }
+
+        @Override
+        public void onBackClick() {
+            Log.i("aaaaaa", "backback");
+
+            if(mMonth==1){
+                mMonth=12;
+                mYear--;
+            }else{
+                mMonth--;
+            }
+            notifyDateChanged(mYear, mMonth, mDay);
+            queryMonth2Database();
+            setDaySumText();
+            mCalendar.setCalendar(mAccountList,mYear,mMonth,mDay);
+
         }
 
     }

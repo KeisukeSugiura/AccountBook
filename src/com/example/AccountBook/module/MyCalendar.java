@@ -6,8 +6,12 @@ package com.example.AccountBook.module;
 public class MyCalendar {
 
     private static final int DAYS_LIST[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    private static final String DAY_OF_WEEK_JP[]= {"日","月","火","水","木","金","土"};
-    private static final String DAY_OF_WEEK_EN[] = {"Sun","Mon","Tue","Wed","Thr","Fri","Sat"};
+    public static final String DAY_OF_WEEK_JP[]= {"日","月","火","水","木","金","土"};
+    public static final String DAY_OF_WEEK_EN[] = {"Sun","Mon","Tue","Wed","Thr","Fri","Sat"};
+    private static MyCalendar sInstance;
+
+    private MyCalendar(){}
+
     /**
      * @param year  西暦
      * @param month 月
@@ -28,6 +32,14 @@ public class MyCalendar {
         return days;
     }
 
+    public static MyCalendar getInstance(){
+        if(sInstance == null){
+            sInstance = new MyCalendar();
+
+        }
+        return sInstance;
+    }
+
 
     /**
      * 西暦、月、日から曜日を返す
@@ -44,7 +56,7 @@ public class MyCalendar {
             month = 14;
         }
 
-        int dayOfWeek = (5 * year / 4 - year / 100 + (26 * month + 16) / 10 + day) % 7;
+        int dayOfWeek = (5 * year / 4 - year / 100 + (26 * month + 16) / 10 + day -1) % 7;
         return dayOfWeek;
     }
 

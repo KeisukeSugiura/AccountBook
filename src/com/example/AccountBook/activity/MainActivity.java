@@ -58,9 +58,13 @@ public class MainActivity extends FragmentActivity implements DayAccountFragment
         //MonthFragment fragment = new MonthFragment();
         //DayAccountFragment fragment = new DayAccountFragment();
 
-        comPagerFragment = new ComPagerFragment();
-        fragmentTransaction.add(R.id.fragment_content,comPagerFragment,"pager");
+		//ほんもの
+		comPagerFragment = new ComPagerFragment();
+		fragmentTransaction.add(R.id.fragment_content,comPagerFragment,"pager");
 		fragmentTransaction.commit();
+
+
+
 		/*testFragment fragment = new testFragment();
 		fragmentTransaction.add(R.id.fragment_content,fragment,"pager");
 		fragmentTransaction.commit();*/

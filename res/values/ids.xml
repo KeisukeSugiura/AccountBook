@@ -23,4 +23,7 @@
     <item type="id" name="select_numberpanel_back"/>
     <item type="id" name="select_numberpanel_clear"/>
 
+    <item type="id" name="month_right_button"/>
+    <item type="id" name="month_left_button"/>
+
 </resources>
